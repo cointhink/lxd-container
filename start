@@ -1,2 +1,3 @@
 #!/bin/sh
+cd /cointhink
 PYTHONPATH=/cointhink/proto /usr/bin/python3 /cointhink/start.py > /cointhink/start.log

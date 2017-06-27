@@ -1,5 +1,6 @@
 import websocket
 import account_pb2
+import script
 
 def on_message(ws, message):
     print(message)
