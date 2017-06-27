@@ -8,9 +8,7 @@ depend() {
 }
 
 start() {
-    ebegin "Starting cointhink script.py"
-    start-stop-daemon --background --start --exec /usr/bin/python3 /cointhink/start.py \
-    --make-pidfile --pidfile /cointhink/pid --env PYTHONPATH=/cointhink/proto 
-    eend $?
+    start-stop-daemon --background --start --exec /cointhink/start \
+    --make-pidfile --pidfile /cointhink/pid 
 }
 

@@ -7,4 +7,5 @@ pip3 install protobuf websocket-client
 chmod 755 /etc/init.d/cointhink-script 
 rc-update add cointhink-script default
 rc-status 
-
+rc-status -c
+rm /setup.sh
