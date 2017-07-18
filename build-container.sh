@@ -1,3 +1,5 @@
+# lxc launch images:alpine/3.5/amd64 tempgrab
+
 lxc profile delete cointhink
 lxc profile create cointhink
 cat profile | lxc profile edit cointhink
