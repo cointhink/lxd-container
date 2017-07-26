@@ -1,6 +1,6 @@
 #!/bin/sh
 echo in-container setup starting
-while [ -z "`ifconfig eth0 |grep inet`" ] ; do echo waiting for eth0; sleep 1;done
+while [ -z "`ifconfig eth0 |grep inet\ addr`" ] ; do echo waiting for eth0; sleep 1;done
 apk update
 apk add expat
 apk add python3
