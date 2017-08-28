@@ -12,6 +12,7 @@ NAME="alpine-cointhink-`date +%Y-%m-%d`"
 echo building $NAME
 lxc launch $IMAGE $NAME -p cointhink
 
+lxc file push inittab $NAME/etc/inittab
 lxc file push init.cointhink $NAME/etc/init.d/cointhink-script
 lxc file push -p --mode=755 start $NAME/cointhink/
 lxc file push -p ../scripting/start.py $NAME/cointhink/
