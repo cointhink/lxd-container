@@ -9,8 +9,13 @@ NAME="alpine-cointhink-`date +%Y-%m-%d`"
 #OUT=`lxc launch $IMAGE 2>&1`
 #NAME=`echo $OUT| cut -d ' ' -f 2`
 
-echo building $NAME
+echo building $NAME from $IMAGE
 lxc launch $IMAGE $NAME -p cointhink
+if [ $? -ne 0 ]
+then
+echo lxc launch failed. abort.
+exit
+fi
 
 lxc file push inittab $NAME/etc/inittab
 lxc file push init.cointhink $NAME/etc/init.d/cointhink-script
