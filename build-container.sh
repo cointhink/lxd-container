@@ -4,7 +4,7 @@ lxc profile delete cointhink
 lxc profile create cointhink
 cat profile | lxc profile edit cointhink
 
-IMAGE="38fcd9743858"
+IMAGE="9a5abc677ee1"
 NAME="alpine-cointhink-`date +%Y-%m-%d`"
 #OUT=`lxc launch $IMAGE 2>&1`
 #NAME=`echo $OUT| cut -d ' ' -f 2`
