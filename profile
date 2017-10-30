@@ -1,4 +1,7 @@
-config: {}
+config:
+  limits.cpu.allowance: 25ms/200ms
+  limits.memory: 50MB
+  limits.memory.swap: "false"
 description: Cointhink Scripting Environment
 devices:
   eth0:
