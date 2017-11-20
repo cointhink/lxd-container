@@ -4,8 +4,8 @@ lxc profile delete cointhink
 lxc profile create cointhink
 cat profile | lxc profile edit cointhink
 
-IMAGE="9a5abc677ee1"
-NAME="alpine-cointhink-`date +%Y-%m-%d`"
+IMAGE="cd3441442c94"
+NAME="cointhink-`date +%Y-%m-%d`"
 #OUT=`lxc launch $IMAGE 2>&1`
 #NAME=`echo $OUT| cut -d ' ' -f 2`
 
@@ -27,7 +27,8 @@ lxc file push -r ../protobuf/python/proto $NAME/cointhink/
 lxc file push setup.sh $NAME/
 echo running setup.sh
 lxc exec $NAME -- /bin/sh -x /setup.sh
-lxc restart $NAME
-
 echo $NAME configured
+lxc stop $NAME
+lxc publish $NAME --alias=$NAME
+echo $NAME published
 
